@@ -9,6 +9,7 @@ class CustomUser(AbstractUser):
 
     # Field for both users
     bio = models.TextField(max_length=400, blank=True)
+    is_verified = models.BooleanField(default=True)
 
     # Fields for Company Accounts
     SECTOR_CHOICES = (

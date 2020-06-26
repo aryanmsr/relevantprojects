@@ -1,5 +1,15 @@
+{% extends 'base.html' %}
+
 {% block content %}
-<h1>Relevant Home</h1>
-<a href="{% url 'regular_user_signup'%}">Student</a>
-<a href="{% url 'company_user_signup'%}">Company</a>
+<!--Searchbar-->
+{% if user.is_authenticated %}
+  {% if user.is_verified %}
+  <p>Hey {{ user.username }}</p>
+  <!--Feed-->
+  {% else %}
+    <p>Thank you for signing up, our team will review your application and get in contanct with you.</p>
+  {% endif %}
+{% endif %}
+
+<!--footer-->
 {% endblock content %}

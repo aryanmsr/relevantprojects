@@ -9,16 +9,14 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ['email', 'bio', 'company_name',
-                  'sector', 'major', 'university', 'is_company']
+        fields = '__all__'
 
 
 class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ['email', 'bio', 'company_name',
-                  'sector', 'major', 'university', 'is_company']
+        fields = '__all__'
 
 # Forms for the views
 
@@ -32,6 +30,7 @@ class CompanyUserCreationForm(UserCreationForm):
     def save(self):
         user_profile = super(CompanyUserCreationForm, self).save(commit=False)
         user_profile.is_company = True
+        user_profil.is_verified = False
         user_profile.save()
         return user_profile
 
