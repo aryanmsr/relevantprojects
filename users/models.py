@@ -12,11 +12,11 @@ class CustomUser(AbstractUser):
 
     # Fields for Company Accounts
     SECTOR_CHOICES = (
-        (1, 'Finance'),
-        (2, 'Technology'),
-        (3, 'Marketing'),
-        (4, 'Consulting'),
-        (5, 'Engineering'),
+        ('Finance', 'Finance'),
+        ('Technology', 'Technology'),
+        ('Marketing', 'Marketing'),
+        ('Consulting', 'Consulting'),
+        ('Engineering', 'Engineering'),
     )
     company_name = models.CharField(max_length=200)
     sector = models.CharField(choices=SECTOR_CHOICES,
