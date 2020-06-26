@@ -7,23 +7,13 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
 
 
-class CustomUserAdmin(UserAdmin):
+@admin.register(CustomUser)
+class CustomUserAdmin(admin.ModelAdmin):
     list_filter = ['is_company']
     list_display = ['company_name', 'username', 'is_company', 'is_verified']
-    fieldsets = (
-        *UserAdmin.fieldsets,
-        (
-            'Custom Field Heading',
-            {
-                'fields': (
-                    'is_verified',
-                ),
-            },
-        ),
-    )
+    model = CustomUser
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
 
 
-admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.unregister(Group)

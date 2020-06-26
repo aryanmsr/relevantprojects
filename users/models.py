@@ -5,7 +5,6 @@ from django.db import models
 class CustomUser(AbstractUser):
     # Bool value to distiguish between user types
     is_company = models.BooleanField(default=False)
-    is_regular_user = models.BooleanField(default=False)
 
     # Field for both users
     bio = models.TextField(max_length=400, blank=True)
@@ -19,9 +18,10 @@ class CustomUser(AbstractUser):
         ('Consulting', 'Consulting'),
         ('Engineering', 'Engineering'),
     )
-    company_name = models.CharField(max_length=200)
+    company_name = models.CharField(max_length=200, blank=True)
     sector = models.CharField(choices=SECTOR_CHOICES,
-                              max_length=40)
+                              max_length=40, blank=True)
+    website = models.URLField(blank=True)
 
     # Fields for regular Users
     major = models.CharField(max_length=50, blank=True)

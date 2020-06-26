@@ -2,12 +2,20 @@
 
 {% block content %}
 <!--Searchbar-->
+<div class="mt-2">
+<form method="get">
+  <div class="d-flex">
+    <input class="flex-grow-1 border rounded pl-2 mr-2" type="text" placeholder="Search...">
+    <button class="btn btn-dark" type="submit">Search</button>
+  </div>
+</form>
+</div>
 {% if user.is_authenticated %}
   {% if user.is_verified %}
   <p>Hey {{ user.username }}</p>
   <!--Feed-->
   {% else %}
-    <p>Thank you for signing up, our team will review your application and get in contanct with you.</p>
+    <p class="mt-3">Thank you for signing up, our team will review your application and get in contact with you.</p>
   {% endif %}
 {% endif %}
 
