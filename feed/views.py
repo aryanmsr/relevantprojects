@@ -21,7 +21,7 @@ def home_page_view(request):
     context = {
         'posts': posts,
     }
-    print(context)
+    print(posts[0].company)
     return render(request, 'home.html', context)
 
 
@@ -103,4 +103,5 @@ def submission_list_view(request):
     # get all submissions of the logged in user
     logged_in_user_id = request.user.id
     submissions = models.Submission.objects.filter(user=logged_in_user_id)
+    print(submissions)
     return render(request, 'submission/submission_list.html', context={'submissions': submissions})
