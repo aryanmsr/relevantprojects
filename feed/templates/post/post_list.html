@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="my-3 d-flex justify-content-between">
+    <a href="{% url 'post_create' %}" class="btn btn-primary text-white py-2">New Post</a>
+    <a class="p-2 border rounded" href="{% url 'logout' %}">Logout</a>
+</div>
+{% for post in posts %}
+  <div>
+    <p class="border rounded p-2"><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a> -- {{ post.date_posted }}</p>
+  </div>
+{% endfor %}
+{% endblock content %}

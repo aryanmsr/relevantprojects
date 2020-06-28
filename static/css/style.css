@@ -4,4 +4,5 @@ body {
 
 .user-form-wrapper {
   max-width: 500px;
+  list-style: none;
 }

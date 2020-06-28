@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-3">
+    <a href="{% url 'home' %}">< Back to feed</a>
+    <div class="mt-3 border rounded p-2">
+        <p>{{ post.title }}</p>
+        <p>{{ post.description }}</p>
+        <p>Posted at {{ post.date_posted}} by {{ post.company }}.</p>
+        <p>Submission until {{ post.date_due }}.</p>
+        {% if user.is_authenticated and not user.is_company %}
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
