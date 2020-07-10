@@ -1,0 +1,39 @@
+{% extends 'base_2.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to Relevant Projects!</h1>
+        <p class="lead">We help students and companies connect with each other through interactive project-based learning!</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Are you a </h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'regular_user_signup' %}" role="button">Student</a>
+          <a class="btn btn-primary btn-lg" href="{% url 'company_user_signup' %}" role="button">Company</a>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Take a look at our current projects!</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">Check them out</a>
+        </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

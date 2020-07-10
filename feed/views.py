@@ -7,7 +7,7 @@ from . import models
 
 
 def landing_page_view(request):
-    return render(request, 'landing.html')
+    return render(request, 'landing_2.html')
 
 
 """
@@ -26,9 +26,9 @@ def home_page_view(request):
 
 
 """
-    CRUD functionality for posts, the detail view can be accessed by anyone while the other 
-    views are restricted to only the logged in user which has to be also a company user which 
-    has been approved. There are two views which allow a company to see all its posts and a view 
+    CRUD functionality for posts, the detail view can be accessed by anyone while the other
+    views are restricted to only the logged in user which has to be also a company user which
+    has been approved. There are two views which allow a company to see all its posts and a view
     to see the all the submissions for a specific post.
 
 """
