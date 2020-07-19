@@ -10,9 +10,14 @@
   </div>
 </form>
 </div>
-{% if user.is_authenticated and not user.is_verified %}
-    <p class="mt-3">Thank you for signing up, our team will review your application and get in contact with you.</p>
+{% if user.is_authenticated and not user.is_company%}
+    <p class="mt-3">Thank you for signing up. Our team will review your application and get in contact with you.</p>
 {% endif %}
+
+{% if user.is_authenticated and user.is_company%}
+    <p class="mt-3">Thank you for signing up. Our team looks forward to working with you.</p>
+{% endif %}
+
 
 <!--Feed-->
 {% for post in posts %}

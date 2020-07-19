@@ -9,6 +9,10 @@ from . import models
 def landing_page_view(request):
     return render(request, 'landing_2.html')
 
+def help(request):
+    return render(request, 'help.html')
+
+
 
 """
     Home page is list view of all posts, with query and filter functionality.

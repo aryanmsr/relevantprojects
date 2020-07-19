@@ -1,8 +1,15 @@
+
 body {
   font-family: "Roboto", sans-serif;
+
 }
 
 .user-form-wrapper {
   max-width: 500px;
   list-style: none;
+}
+
+
+#FAQ {
+  text-align: center;
 }

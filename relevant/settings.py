@@ -136,3 +136,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Email backend (SendGrid) - should store in enviroment variables in production
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+

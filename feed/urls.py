@@ -3,10 +3,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Home and landing page
+    # Home and landing page and help
     path('', views.home_page_view, name='home'),
     path('learn/', views.landing_page_view, name='landing'),
-
+    path('help/', views.help, name='help'),
     # Detail view accesible to anyone
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
 
